@@ -1,4 +1,3 @@
-import signal
 import sys
 import time
 import threading
@@ -113,23 +112,6 @@ def click():
         mouse.click(button)
         time.sleep(delay)
 
-
-def signal_handler(sig, frame):
-    # 关闭前播放提示音
-    m_playsound("data/off.wav")
-
-    # 停止监听键盘
-    listener.stop()
-
-    # 输出关闭信息
-    print("程序已关闭")
-
-    # 返回关闭代码 0 表示正常关闭
-    sys.exit(0)
-
-
-# 监听 ctrl+c信号
-signal.signal(signal.SIGINT, signal_handler)
 
 # 监听键盘按键，按下任意键盘按键后触发 on_press 函数进行多线程判断
 with Listener(on_press=on_press, on_release=on_release) as listener:
