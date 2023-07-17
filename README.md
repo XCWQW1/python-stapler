@@ -9,3 +9,5 @@
 首先```pip install -r requirements.txt```
 
 直接```python main.py```即可运行
+
+（一切的起因都是应为我玩了一个minecraft整合包
